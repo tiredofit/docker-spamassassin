@@ -1,0 +1,1 @@
+15 23 * * * s6-envuidgid spamassassin sa-update && kill -HUP `cat /var/run/spamassassin/spamd.pid` >/dev/null 2>&1
