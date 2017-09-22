@@ -27,13 +27,13 @@ if [ ! -f /tmp/state/10-spamassassin ]; then
         touch /var/lib/spamassassin/.initialized
     fi
 
-	echo 'Initialization Complete' >/tmp/state/10-spamasassin
-
 	### Set Debug Mode
 	if [ "$DEBUG_MODE" = "TRUE" ] || [ "$DEBUG_MODE" = "true" ]; then
 		set -x
 		DEBUG_ARG="--debug" 
 	fi
+	
+	echo 'Initialization Complete' >/tmp/state/10-spamasassin
 fi
 
 
