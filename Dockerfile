@@ -21,9 +21,8 @@ LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 ### Cleanup
        rm -rf /var/cache/apk/*
 
-
 ### Add Files
    ADD install /
 
 ### Networking Configuration
-   EXPOSE 737
+   EXPOSE 783
