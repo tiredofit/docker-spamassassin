@@ -88,4 +88,4 @@ docker exec -it (whatever your container name is e.g. spamassassin) bash
 
 # References
 
-* https://www.spamassassinhq.com
+* https://spamassassin.apache.org
