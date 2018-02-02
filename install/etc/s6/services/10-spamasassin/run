@@ -39,4 +39,4 @@ fi
 
 echo ''
 echo '** Starting spamassassin'
-exec spamd --username spamassassin --nouser-config --syslog=/var/log/spamassassin/spamd.log -pidfile /var/run/spamassassin/spamd.pid --helper-home-dir /var/lib/spamassassin --ip-address 0.0.0.0:783 --allowed-ips 0.0.0.0/0 $DEBUG_ARG
+exec spamd --username spamassassin --nouser-config --syslog=/var/log/spamassassin/spamd.log -pidfile /var/run/spamassassin/spamd.pid --helper-home-dir /var/lib/spamassassin --ip-address 0.0.0.0:737 --allowed-ips 0.0.0.0/0 $DEBUG_ARG

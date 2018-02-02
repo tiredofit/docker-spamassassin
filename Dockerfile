@@ -1,4 +1,4 @@
-FROM tiredofit/alpine:3.6
+FROM tiredofit/alpine:3.7
 LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 
 ### Disable Features From Base Image
@@ -21,8 +21,9 @@ LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 ### Cleanup
        rm -rf /var/cache/apk/*
 
+
 ### Add Files
    ADD install /
 
 ### Networking Configuration
-   EXPOSE 783
+   EXPOSE 737
