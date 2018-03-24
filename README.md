@@ -1,5 +1,11 @@
 # hub.docker.com/tiredofit/spamassassin
 
+[![Build Status](https://img.shields.io/docker/build/tiredofit/spamassassin.svg)](https://hub.docker.com/r/tiredofit/spamassassin)
+[![Docker Pulls](https://img.shields.io/docker/pulls/tiredofit/spamassassin.svg)](https://hub.docker.com/r/tiredofit/spamassassin)
+[![Docker Stars](https://img.shields.io/docker/stars/tiredofit/spamassassin.svg)](https://hub.docker.com/r/tiredofit/spamassassin)
+[![Docker Layers](https://images.microbadger.com/badges/image/tiredofit/spamassassin.svg)](https://microbadger.com/images/tiredofit/spamassassin)
+[![Image Size](https://img.shields.io/microbadger/image-size/tiredofit/spamassassin.svg)](https://microbadger.com/images/tiredofit/spamassassin)
+
 # Introduction
 
 Dockerfile to build an [Spamassassin](https://spamassassin.apache.org) container image to scan mail messages for Spam.
