@@ -80,7 +80,7 @@ There are no additional environment variables other than the ones included from 
 
 | Port | Description |
 |-----------|-------------|
-| `783` | Spamassassin Listening Port |
+| `737` | Spamassassin Listening Port |
 
 # Maintenance
 
