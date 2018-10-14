@@ -6,7 +6,7 @@ services:
     image: tiredofit/spamassassin
     container_name: spamassassin-app
     ports: 
-    - 783:783
+    - 737:737
     volumes:
     - ./logs/spamassassin:/var/log/spamassassin
     - ./conf:/etc/mail/spamassassin
