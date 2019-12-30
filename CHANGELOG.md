@@ -1,3 +1,19 @@
+## 1.3.0 2019-12-30 <dave at tiredofit dot ca>
+
+   ### Added
+      - Support new tiredofit/alpine base image
+
+
+## 1.2.1 2019-12-20 <dave at tiredofit dot ca>
+
+   ### Added
+      - Alpine 3.11 Base
+
+
+## 1.2 2019-06-19 Dave Conroy <dave at tiredofit dot ca>
+
+* Alpine 3.10
+
 ## 1.1 2017-12-01 Dave Conroy <dave at tiredofit dot ca>
 
 * Bump to Alpine 3.7 as base

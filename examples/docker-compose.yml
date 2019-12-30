@@ -1,9 +1,8 @@
-version: '2'
-
+version: '3.7'
 services:
   
   spamassassin-app:
-    image: tiredofit/spamassassin
+    image: registry.selfdesign.org/docker/spamassassin
     container_name: spamassassin-app
     ports: 
     - 783:783
@@ -13,13 +12,15 @@ services:
     - ./data:/var/lib/spamassassin
     environment:
     - ZABBIX_HOSTNAME=spamassassin-app
-
     networks:
-      - proxy-tier
+    - internal
+    - services
     restart: always
 
 networks:
-  proxy-tier:
-    external:
-      name: nginx-proxy
+  internal:
+    external: false
+  services:
+    external: true
+
 
