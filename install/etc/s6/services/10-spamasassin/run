@@ -1,7 +1,8 @@
 #!/usr/bin/with-contenv bash
 
-source /assets/functions/*
+for s in /assets/functions/*; do source $s; done
 PROCESS_NAME="spamassassin"
+check_container_initialized
 
 ### File Permissions Check
 mkdir -p /var/lib/spamassassin
@@ -11,14 +12,14 @@ chown -R spamassassin:spamassassin /var/lib/spamassassin /var/run/spamassassin /
 
 ### Assets Setup
 if [ ! -f /etc/mail/spamassassin/local.cf ] ; then
-	echo '** [spamasassin] Copying Default Configuration'
+	print_notice "Copying Default Configuration"
 	cp -R /assets/mail /etc/
 	#chown -R spamassassin:spamassassin /etc/mail
 fi
 
 ### Update Spamassassin Ruleset
 if [ ! -f /var/lib/spamassassin/.initialized ] ; then		
-	echo '** [spamasassin] Updating Rulesets'
+	print_notice "Updating Rulesets"
 	s6-envuidgid spamassassin sa-update
     touch /var/lib/spamassassin/.initialized
 fi
