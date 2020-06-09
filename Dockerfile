@@ -1,4 +1,4 @@
-FROM tiredofit/alpine:3.11
+FROM tiredofit/alpine:3.11-latest
 LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 
 ### Disable Features From Base Image

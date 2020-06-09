@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bash
 
-for s in /assets/functions/*; do source $s; done
+source /assets/functions/00-container
 PROCESS_NAME="spamassassin"
 check_container_initialized
 
@@ -25,7 +25,7 @@ if [ ! -f /var/lib/spamassassin/.initialized ] ; then
 fi
 
 ### Set Debug Mode
-if [ "$DEBUG_MODE" = "TRUE" ] || [ "$DEBUG_MODE" = "true" ]; then
+if var_true $DEBUG_MODE ; then
 	DEBUG_ARG="--debug" 
 fi
 	
