@@ -1,11 +1,16 @@
-# hub.docker.com/tiredofit/spamassassin
+# hub.docker.com/r/tiredofit/spamassassin
+
+[![Build Status](https://img.shields.io/docker/build/tiredofit/spamassassin.svg)](https://hub.docker.com/r/tiredofit/spamassassin)
+[![Docker Pulls](https://img.shields.io/docker/pulls/tiredofit/spamassassin.svg)](https://hub.docker.com/r/tiredofit/spamassassin)
+[![Docker Stars](https://img.shields.io/docker/stars/tiredofit/spamassassin.svg)](https://hub.docker.com/r/tiredofit/spamassassin)
+[![Docker Layers](https://images.microbadger.com/badges/image/tiredofit/spamassassin.svg)](https://microbadger.com/images/tiredofit/spamassassin)
+
 
 # Introduction
 
 Dockerfile to build an [Spamassassin](https://spamassassin.apache.org) container image to scan mail messages for Spam.
 
 * This Container uses a [customized Alpine Linux base](https://hub.docker.com/r/tiredofit/alpine) which includes [s6 overlay](https://github.com/just-containers/s6-overlay) enabled for PID 1 Init capabilities, [zabbix-agent](https://zabbix.org) for individual container monitoring, Cron also installed along with other tools (bash,curl, less, logrotate, nano, vim) for easier management. It also supports sending to external SMTP servers..
-
 
 
 [Changelog](CHANGELOG.md)
@@ -35,11 +40,11 @@ This image doesn't do much on it's own, you must use a complemenary service to p
 
 # Installation
 
-Automated builds of the image are available on [Registry](https://hub.docker.com/tiredofit/spamassassin) and is the recommended method of installation.
+Automated builds of the image are available on [Docker Hub](https://hub.docker.com/r/tiredofit/spamassassin) and is the recommended method of installation.
 
 
 ```bash
-docker pull hub.docker.com/tiredofit/spamassassin:(imagetag)
+docker pull tiredofit/spamassassin:(imagetag)
 ```
 
 The following image tags are available:
@@ -62,13 +67,35 @@ The following directories are used for configuration and can be mapped for persi
 
 | Directory | Description |
 |-----------|-------------|
-| `/var/log/spamassassin` | Spamassassin Logs |
-| `/etc/mail/spamassassin` | Configuration |
-| `/var/lib/spamassassin` | Volatile Data (Downloaded Patterns)
+| `/logs/` | Spamassassin Logs |
+| `/config/` | Configuration |
+| `/data/` | Volatile Data (Downloaded Patterns)
     
 ### Environment Variables
 
-There are no additional environment variables other than the ones included from the [Base image](https://hub.docker.com/r/tiredofit/alpine).
+Along with the Environment Variables from the [Base image](https://hub.docker.com/r/tiredofit/alpine),below is the complete list of available options that can be used to customize your installation.
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `CHILD_MAX` | Max Children | `5` |
+| `CHILD_MAX_CONNECTIONS` | Max connections per child | `200` |
+| `CHILD_MAX_SPARE` | Max Spare Children | `2` |
+| `CHILD_MIN` | Minimum Child Process | `1` |
+| `CHILD_MIN_SPARE` | Minimum Spare Children | `1` |
+| `CONFIG_PATH` | Config directory | `/config/` |
+| `DATA_PATH` | Updates / Rulesets directory | `/data/` |
+| `ENABLE_LEARNING` | Enable Learning/Reporting | `TRUE` |
+| `ENABLE_ROUND_ROBIN` | Enable Roundrobin Forking for childs | `FALSE` |
+| `ENABLE_UPDATES` | Enable Ruleset Updates | `TRUE` |
+| `LISTEN_PORT` | TCP Listen Port | `783` |
+| `LOG_FILE` | Log File | `spamassassin.log` |
+| `LOG_PATH` | Log Logcation | `/logs/` |
+| `PID_FILE` | PID File |`spamassassin.pid` |
+| `PID_PATH` | PID Path | `/var/run/spamassassin/` |
+| `TIMEOUT_CHILD` | Child Timeout in Seconds | `300` |
+| `TIMEOUT_IDENT` | Ident Timeout in Seconds | `5` |
+| `TIMEOUT_TCP` | TCP Timeout in Seconds | `30` |
+| `UPDATE_PERIOD` | Cron Expression when to perform updates | `15 23 * * *` |
 
 ### Networking
 

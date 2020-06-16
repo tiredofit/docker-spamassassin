@@ -1,3 +1,9 @@
+## 2.0.0 2020-06-16 <dave at tiredofit dot ca>
+
+   ### Added
+      - Rebuilt image from ground up - Many new environment variables
+
+
 ## 1.4.1 2020-06-12 <dave at tiredofit dot ca>
 
    ### Added

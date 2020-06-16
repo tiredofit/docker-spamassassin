@@ -1,0 +1,16 @@
+#!/usr/bin/with-contenv bash
+
+parse_arguments() {
+	### Set Debug Mode
+	if var_true $DEBUG_MODE ; then
+		debug_arg="--debug" 
+	fi
+
+	if var_true $ENABLE_LEARNING ; then
+		learning_arg="--allow-tell"
+	fi
+
+	if var_true $ENABLE_ROUND_ROBIN ; then
+		round_robin_arg="--round-robin"
+	fi
+}

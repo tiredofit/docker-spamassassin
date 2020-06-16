@@ -1,0 +1,33 @@
+#!/usr/bin/with-contenv bash
+
+source /assets/functions/00-container
+prepare_service
+PROCESS_NAME="spamassassin"
+
+### File Permissions Check
+mkdir -p ${CONFIG_PATH} ${DATA_PATH} ${LOG_PATH} ${PID_PATH}
+chown -R spamassassin:spamassassin ${DATA_PATH} ${LOG_PATH} ${PID_PATH} ${CONFIG_PATH}
+ln -sf ${CONFIG_PATH} /etc/mail/spamassassin
+ln -sf ${DATA_PATH} /var/lib/spamassassin
+
+### Log File Setup
+sed -i "s#<LOG_PATH>#${LOG_PATH}#g" /etc/logrotate.d/spamassassin
+
+### Assets Setup
+if [ ! -f ${CONFIG_PATH}local.cf ] ; then
+	print_notice "First time Install Detected - Copying Default Configuration"
+	cp -R /assets/spamassassin/* ${CONFIG_PATH}
+	chown -R spamassassin:spamassassin ${CONFIG_PATH}
+fi
+
+if var_true $ENABLE_UPDATES ; then
+	print_notice "Enabling Automatic Ruleset Updates"
+	echo "${UPDATE_PERIOD} sa-update ; chown -R spamassassin:spamassassin ${DATA_PATH} && s6-svc -h /var/run/s6/services/10-spamassassin >/dev/null 2>&1" >> /assets/cron/crontab.txt
+fi
+
+### Update Spamassassin Rulesets
+print_notice "Updating Rulesets"
+silent sa-update
+chown -R spamassassin:spamassassin ${DATA_PATH}
+
+liftoff

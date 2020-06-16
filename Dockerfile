@@ -6,21 +6,27 @@ ENV ENABLE_SMTP=false
 
 ### Create User
 RUN set -x && \
-   addgroup -g 737 spamassassin && \
-   adduser -S -D -G spamassassin -u 737 -h /var/lib/spamassassin/ spamassassin && \
-   \
+    addgroup -g 783 spamassassin && \
+    adduser -S -D -G spamassassin -u 783 -h /var/lib/spamassassin/ spamassassin && \
+    \
 ### Install Dependencies
-   apk update && \
-   apk add --no-cache \
+    apk update && \
+    apk upgrade && \
+    apk add \
            razor \
            spamassassin \
            && \
    \
+    mkdir -p /assets/spamassassin && \
+    cp -R /etc/mail/spamassassin/* /assets/spamassassin && \
+    \
 ### Cleanup
-   rm -rf /var/cache/apk/*
+    rm -rf /etc/mail/spamassassin && \
+    rm -rf /var/lib/spamassassin && \
+    rm -rf /var/cache/apk/*
 
 ### Networking Configuration
-EXPOSE 737
+EXPOSE 783
 
 ### Add Files
 ADD install /
