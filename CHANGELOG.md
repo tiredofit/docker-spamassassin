@@ -1,3 +1,9 @@
+## 2.0.1 2020-09-13 <dave at tiredofit dot ca>
+
+   ### Changed
+      - Add extra .spamassassin folder on startup for Bayesian Learning
+
+
 ## 2.0.0 2020-06-16 <dave at tiredofit dot ca>
 
    ### Added

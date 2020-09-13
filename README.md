@@ -6,7 +6,7 @@
 [![Docker Layers](https://images.microbadger.com/badges/image/tiredofit/spamassassin.svg)](https://microbadger.com/images/tiredofit/spamassassin)
 
 
-# Introduction
+## Introduction
 
 Dockerfile to build an [Spamassassin](https://spamassassin.apache.org) container image to scan mail messages for Spam.
 
@@ -15,11 +15,11 @@ Dockerfile to build an [Spamassassin](https://spamassassin.apache.org) container
 
 [Changelog](CHANGELOG.md)
 
-# Authors
+## Authors
 
 - [Dave Conroy](https://github.com/tiredofit/)
 
-# Table of Contents
+## Table of Contents
 
 - [Introduction](#introduction)
     - [Changelog](CHANGELOG.md)
@@ -33,12 +33,12 @@ Dockerfile to build an [Spamassassin](https://spamassassin.apache.org) container
     - [Shell Access](#shell-access)
    - [References](#references)
 
-# Prerequisites
+## Prerequisites
 
 This image doesn't do much on it's own, you must use a complemenary service to pass messages or data to it via port 783.
 
 
-# Installation
+## Installation
 
 Automated builds of the image are available on [Docker Hub](https://hub.docker.com/r/tiredofit/spamassassin) and is the recommended method of installation.
 
@@ -50,7 +50,7 @@ docker pull tiredofit/spamassassin:(imagetag)
 The following image tags are available:
 * `latest` - Most recent release of Spamassassin w/ Alpine Linux
 
-# Quick Start
+### Quick Start
 
 * The quickest way to get started is using [docker-compose](https://docs.docker.com/compose/). See the examples folder for a working [docker-compose.yml](examples/docker-compose.yml) that can be modified for development or production use.
 
@@ -59,7 +59,7 @@ The following image tags are available:
 
 Upon starting the image will check for new/updated patterns and will download if none exist. Patterns are updated daily at 23h15 automatically.
 
-# Configuration
+## Configuration
 
 ### Data-Volumes
 
@@ -103,9 +103,9 @@ Along with the Environment Variables from the [Base image](https://hub.docker.co
 |-----------|-------------|
 | `783` | Spamassassin Listening Port |
 
-# Maintenance
+## Maintenance
 
-#### Shell Access
+### Shell Access
 
 For debugging and maintenance purposes you may want access the containers shell. 
 
@@ -113,6 +113,6 @@ For debugging and maintenance purposes you may want access the containers shell.
 docker exec -it (whatever your container name is e.g. spamassassin) bash
 ```
 
-# References
+## References
 
 * https://spamassassin.apache.org
