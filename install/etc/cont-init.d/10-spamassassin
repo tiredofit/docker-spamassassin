@@ -6,7 +6,7 @@ PROCESS_NAME="spamassassin"
 
 ### File Permissions Check
 mkdir -p ${CONFIG_PATH} ${DATA_PATH}/.spamassassin ${LOG_PATH} ${PID_PATH}
-chown -R spamassassin:spamassassin ${DATA_PATH} ${LOG_PATH} ${PID_PATH} ${CONFIG_PATH}
+chown -R spamassassin:spamassassin ${DATA_PATH} ${LOG_PATH} ${PID_PATH} ${CONFIG_PATH} /var/lib/spamassassin/.spamassassin
 ln -sf ${CONFIG_PATH} /etc/mail/spamassassin
 ln -sf ${DATA_PATH} /var/lib/spamassassin
 
