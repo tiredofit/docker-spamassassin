@@ -1,3 +1,9 @@
+## 2.0.2 2021-05-03 <dave at tiredofit dot ca>
+
+   ### Added
+      - Bump to Alpine 3.13 base
+
+
 ## 2.0.1 2020-09-13 <dave at tiredofit dot ca>
 
    ### Changed

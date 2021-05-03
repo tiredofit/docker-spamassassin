@@ -1,4 +1,4 @@
-FROM tiredofit/alpine:3.12
+FROM tiredofit/alpine:3.13
 LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 
 ### Disable Features From Base Image
@@ -12,7 +12,7 @@ RUN set -x && \
 ### Install Dependencies
     apk update && \
     apk upgrade && \
-    apk add \
+    apk add -t .spamassassin-run-deps \
            razor \
            spamassassin \
            && \
