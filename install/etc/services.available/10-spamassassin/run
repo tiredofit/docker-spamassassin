@@ -10,7 +10,7 @@ check_service_initialized init
 parse_arguments
 liftoff
 
-print_info "Starting spamassassin"
+print_start "Starting spamassassin"
 exec spamd \
 			--username spamassassin \
             --group spamassassin \
