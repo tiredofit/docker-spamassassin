@@ -1,8 +1,8 @@
-FROM tiredofit/alpine:3.14
+FROM docker.io/tiredofit/alpine:3.15
 LABEL maintainer="Dave Conroy (github.com/tiredofit)"
 
 ### Disable Features From Base Image
-ENV ENABLE_SMTP=false
+ENV CONTAINER_ENABLE_MESSAGING=FALSE
 
 ### Create User
 RUN set -x && \
