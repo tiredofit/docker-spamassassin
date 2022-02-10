@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bash
+#!/command/with-contenv bash
 
 CHILD_MAX=${CHILD_MAX:-"5"}
 CHILD_MAX_CONNECTIONS=${CHILD_MAX_CONNECTIONS:-"200"}
