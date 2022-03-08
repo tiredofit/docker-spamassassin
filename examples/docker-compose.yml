@@ -2,7 +2,7 @@ version: '3.7'
 services:
   
   spamassassin-app:
-    image: registry.selfdesign.org/docker/spamassassin
+    image: tiredofit/spamassassin
     container_name: spamassassin-app
     ports: 
     - 783:783
