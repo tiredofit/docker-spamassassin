@@ -1,7 +1,7 @@
 # github.com/tiredofit/docker-spamassassin
 
 [![GitHub release](https://img.shields.io/github/v/tag/tiredofit/docker-spamassassin?style=flat-square)](https://github.com/tiredofit/docker-spamassassin/releases/latest)
-[![Build Status](https://img.shields.io/github/workflow/status/tiredofit/docker-spamassassin/build?style=flat-square)](https://github.com/tiredofit/docker-spamassassin/actions?query=workflow%3Abuild)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/tiredofit/docker-spamassassin/main.yml?branch=main&style=flat-square)](https://github.com/tiredofit/docker-spamassassin/actions)
 [![Docker Stars](https://img.shields.io/docker/stars/tiredofit/spamassassin.svg?style=flat-square&logo=docker)](https://hub.docker.com/r/tiredofit/spamassassin/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/tiredofit/spamassassin.svg?style=flat-square&logo=docker)](https://hub.docker.com/r/tiredofit/spamassassin/)
 [![Become a sponsor](https://img.shields.io/badge/sponsor-tiredofit-181717.svg?logo=github&style=flat-square)](https://github.com/sponsors/tiredofit)
