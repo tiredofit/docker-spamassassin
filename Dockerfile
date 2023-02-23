@@ -14,7 +14,7 @@ RUN set -x && \
     apk upgrade && \
     apk add -t .spamassassin-run-deps \
            razor \
-           spamassassin \
+           spamassassin=3.4.6-r4 \
            && \
    \
     mkdir -p /assets/spamassassin && \
