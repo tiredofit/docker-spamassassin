@@ -27,4 +27,4 @@ exec spamd \
 			--syslog=${LOG_PATH}${LOG_FILE} \
 			--timeout-child=${TIMEOUT_CHILD} \
 			--timeout-tcp=${TIMEOUT_TCP} \
-			--nouser-config $debug_arg $learing_arg $round_robin_arg
+			--nouser-config $debug_arg $learning_arg $round_robin_arg
