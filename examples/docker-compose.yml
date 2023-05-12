@@ -7,9 +7,9 @@ services:
     ports: 
     - 783:783
     volumes:
-    - ./logs/spamassassin:/var/log/spamassassin
-    - ./conf:/etc/mail/spamassassin
-    - ./data:/var/lib/spamassassin
+    - ./logs/spamassassin:/logs
+    - ./conf:/config
+    - ./data:/data
     environment:
     - CONTAINER_NAME=spamassassin-app
     networks:
