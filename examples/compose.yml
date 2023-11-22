@@ -1,26 +1,22 @@
-version: '3.7'
 services:
   
   spamassassin-app:
     image: tiredofit/spamassassin
     container_name: spamassassin-app
     ports: 
-    - 783:783
+      - 783:783
     volumes:
-    - ./logs/spamassassin:/logs
-    - ./conf:/config
-    - ./data:/data
+      - ./logs/spamassassin:/logs
+      - ./conf:/config
+      - ./data:/data
     environment:
-    - CONTAINER_NAME=spamassassin-app
+      - TIMEZONE=America/Vancouver
+      - CONTAINER_NAME=spamassassin-app
     networks:
-    - internal
-    - services
+      - services
     restart: always
 
 networks:
-  internal:
-    external: false
   services:
     external: true
-
 

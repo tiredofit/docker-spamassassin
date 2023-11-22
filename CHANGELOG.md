@@ -1,3 +1,9 @@
+## 2.0.11 2023-11-22 <dave at tiredofit dot ca>
+
+   ### Changed
+      - Update base image
+
+
 ## 2.0.10 2023-05-10 <dave at tiredofit dot ca>
 
    ### Added
