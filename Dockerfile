@@ -15,7 +15,7 @@ RUN source /assets/functions/00-container && \
     package upgrade && \
     package install  .spamassassin-run-deps \
            razor \
-           spamassassin \
+           spamassassin=3.4.6-r4 \
            && \
    \
     mkdir -p /assets/spamassassin && \
